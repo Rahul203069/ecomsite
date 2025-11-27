@@ -26,11 +26,11 @@ export default function Hero() {
                 </span>
               </div>
 
-              <h1 className="text-5xl lg:text-7xl font-black text-[#0A2540] mb-6 leading-[1.05] tracking-tight">
-                Where the Ocean<br />
-                <span className="text-[#2D7A89]">Meets </span>
-                <span className="text-[#2D7A89]">Obsession</span>
-              </h1>
+             <h1 className="text-5xl lg:text-7xl font-black text-[#0A2540] mb-6 leading-[1.05] tracking-tight">
+  Where the Ocean<br />
+  <span className="text-[#2D7A89]">Meets</span><br />
+  <span className="text-[#2D7A89]">Obsession</span>
+</h1>
 
               <p className="text-lg lg:text-xl text-[#2C3338]/90 leading-relaxed mb-10 max-w-xl font-light">
                 Authentic stories from passionate anglers and expertly curated gear for those who live and breathe the coastal lifestyle.
