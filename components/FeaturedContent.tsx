@@ -74,38 +74,37 @@ export default function FeaturedContent() {
 
           {/* Left Column - Large Hero Article */}
           <a href="#" className="block group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white shadow-lg">
-            <div className="relative h-72 overflow-hidden">
+            <div className="relative h-full overflow-hidden">
               <img
                 src={featuredArticles[0].image}
                 alt={featuredArticles[0].title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/80 via-transparent to-transparent"></div>
-              <span className="absolute top-4 left-4 inline-flex items-center px-3 py-1.5 bg-[#FF6B4A] text-white text-xs font-bold rounded">
-                {featuredArticles[0].category}
-              </span>
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/95 via-[#0A2540]/50 to-transparent"></div>
 
-            <div className="p-6">
-              <div className="flex items-center gap-4 text-[#2C3338]/60 text-xs mb-3">
-                <span>{featuredArticles[0].location}</span>
-                <div className="flex items-center gap-1">
-                  <Clock size={14} />
-                  <span>{featuredArticles[0].readTime}</span>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <span className="inline-flex items-center px-3 py-1 bg-[#FF6B4A] text-white text-xs font-bold rounded mb-3">
+                  {featuredArticles[0].category}
+                </span>
+
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#E8DCC4] transition-colors leading-tight">
+                  {featuredArticles[0].title}
+                </h3>
+
+                <p className="text-[#E8DCC4]/90 text-sm mb-3 leading-relaxed line-clamp-2">
+                  {featuredArticles[0].excerpt}
+                </p>
+
+                <div className="flex items-center gap-4 text-[#E8DCC4] text-xs">
+                  <div className="flex items-center gap-1">
+                    <Clock size={14} />
+                    <span>{featuredArticles[0].readTime}</span>
+                  </div>
+                  <div className="flex items-center gap-1 font-semibold group-hover:gap-2 transition-all">
+                    <span>Read More</span>
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-              </div>
-
-              <h3 className="text-xl font-bold text-[#0A2540] mb-2 group-hover:text-[#2D7A89] transition-colors leading-tight uppercase">
-                {featuredArticles[0].title}
-              </h3>
-
-              <p className="text-[#2C3338]/80 text-sm mb-4 leading-relaxed">
-                {featuredArticles[0].excerpt}
-              </p>
-
-              <div className="flex items-center gap-2 text-[#FF6B4A] font-semibold text-xs uppercase group-hover:gap-3 transition-all">
-                <span>Read Full Story</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
           </a>
@@ -163,48 +162,45 @@ export default function FeaturedContent() {
             <a 
               key={article.id} 
               href="#" 
-              className="block group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+              className="block group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
             >
-              <div className="flex gap-4 p-5">
-                <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
-                  <img 
-                    src={article.image} 
-                    alt={article.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  />
-                  <span className="absolute top-2 left-2 inline-flex items-center px-2 py-1 bg-[#FF6B4A] text-white text-xs font-bold rounded">
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/95 via-[#0A2540]/50 to-transparent"></div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <span className="inline-flex items-center px-3 py-1 bg-[#FF6B4A] text-white text-xs font-bold rounded mb-3">
                     {article.category}
                   </span>
-                </div>
 
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-3 text-[#2C3338]/60 text-xs mb-2">
-                      <span>{article.location}</span>
-                      <div className="flex items-center gap-1">
-                        <Clock size={12} />
-                        <span>{article.readTime}</span>
-                      </div>
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#E8DCC4] transition-colors leading-tight">
+                    {article.title}
+                  </h3>
+
+                  <p className="text-[#E8DCC4]/90 text-sm mb-3 leading-relaxed line-clamp-2">
+                    {article.excerpt}
+                  </p>
+
+                  <div className="flex items-center gap-4 text-[#E8DCC4] text-xs">
+                    <div className="flex items-center gap-1">
+                      <Clock size={14} />
+                      <span>{article.readTime}</span>
                     </div>
-
-                    <h3 className="text-base font-bold text-[#0A2540] mb-2 group-hover:text-[#2D7A89] transition-colors leading-tight uppercase line-clamp-2">
-                      {article.title}
-                    </h3>
-
-                    <p className="text-[#2C3338]/80 text-xs line-clamp-2 leading-relaxed mb-3">
-                      {article.excerpt}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-[#FF6B4A] font-semibold text-xs uppercase group-hover:gap-3 transition-all">
-                    <span>Read More</span>
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    <div className="flex items-center gap-1 font-semibold group-hover:gap-2 transition-all">
+                      <span>Read More</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </div>
             </a>
           ))}
         </div>
+        
 
         {/* View All Button */}
         <div className="mt-12 text-center">
