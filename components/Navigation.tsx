@@ -10,10 +10,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-12">
             <a href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#0A2540]">
-                <span className="font-bold text-xl text-[#E8DCC4]">DTH</span>
-              </div>
-              <span className="text-heading text-2xl font-bold hidden sm:block text-[#0A2540]">
+        
+              <span className="text-heading text-2xl font-bold hidden text-[#0A2540]">
                DOWN THE COVE
               </span>
             </a>
