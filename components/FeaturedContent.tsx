@@ -64,93 +64,190 @@ export default function FeaturedContent() {
           </p>
         </div>
 
-        {/* Hero Featured Article */}
-        <div className="mb-8 animate-fade-in-up">
-          <a
-            href="#"
-            className="block group rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white shadow-xl"
-          >
-            <div className="relative h-[500px] lg:h-[600px] overflow-hidden">
-              <img
-                src={featuredArticles[0].image}
-                alt={featuredArticles[0].title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/95 via-[#0A2540]/60 to-transparent"></div>
-
-              <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
-                <div className="max-w-3xl">
-                  <span className="inline-flex items-center px-5 py-2 bg-[#FF6B4A] text-white text-sm font-bold rounded-full mb-5 shadow-lg">
-                    {featuredArticles[0].category}
-                  </span>
-
-                  <h3 className="text-4xl lg:text-5xl font-black text-white mb-5 group-hover:text-[#E8DCC4] transition-colors leading-tight">
-                    {featuredArticles[0].title}
-                  </h3>
-
-                  <p className="text-[#E8DCC4] text-lg lg:text-xl mb-6 leading-relaxed">
-                    {featuredArticles[0].excerpt}
-                  </p>
-
-                  <div className="flex items-center gap-6 text-[#E8DCC4]">
-                    <div className="flex items-center gap-2">
-                      <Clock size={20} />
-                      <span className="font-medium">{featuredArticles[0].readTime}</span>
-                    </div>
-                    <div className="flex items-center gap-2 font-semibold group-hover:gap-4 transition-all">
-                      <span>Read More</span>
-                      <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        {/* Grid of 4 Articles */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredArticles.slice(1).map((article, index) => (
+       {/* Main Grid Layout */}
+        <div className="grid lg:grid-cols-2 gap-6">
+          {/* Left Column - Large Hero Article */}
+          <div className="animate-fade-in-up">
             <a
-              key={article.id}
               href="#"
-              className="block group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up hover:-translate-y-2"
-              style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+              className="block group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white shadow-lg h-full"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-[400px] overflow-hidden">
                 <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  src={featuredArticles[0].image}
+                  alt={featuredArticles[0].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/90 via-[#0A2540]/30 to-transparent"></div>
                 
-                <span className="absolute top-4 left-4 inline-flex items-center px-3 py-1 bg-white/95 backdrop-blur-sm text-[#0A2540] text-xs font-bold rounded-full shadow-md">
-                  {article.category}
+                <span className="absolute top-4 left-4 inline-flex items-center px-4 py-2 bg-[#FF6B4A] text-white text-xs font-bold rounded shadow-md">
+                  {featuredArticles[0].category}
                 </span>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-[#0A2540] mb-3 group-hover:text-[#2D7A89] transition-colors line-clamp-2 leading-snug">
-                  {article.title}
+                <div className="flex items-center gap-4 text-[#2C3338]/70 text-sm mb-3">
+                  <span>Newquay, Cornwall</span>
+                  <div className="flex items-center gap-1">
+                    <Clock size={16} />
+                    <span>{featuredArticles[0].readTime}</span>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-[#0A2540] mb-3 group-hover:text-[#2D7A89] transition-colors leading-tight uppercase">
+                  {featuredArticles[0].title}
                 </h3>
 
-                <p className="text-[#2C3338]/80 text-sm mb-4 line-clamp-2 leading-relaxed">
-                  {article.excerpt}
+                <p className="text-[#2C3338]/80 text-sm mb-4 leading-relaxed">
+                  {featuredArticles[0].excerpt}
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-[#2D7A89] text-sm font-medium">
+                <div className="flex items-center gap-2 text-[#FF6B4A] font-semibold text-sm uppercase group-hover:gap-3 transition-all">
+                  <span>Read Full Story</span>
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </a>
+          </div>
+
+          {/* Right Column - 2 Medium Articles Stacked */}
+       {/* Main Grid Layout */}
+        <div className="grid lg:grid-cols-2 gap-6">
+          {/* Left Column - Large Hero Article */}
+          <div className="animate-fade-in-up">
+            <a
+              href="#"
+              className="block group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white shadow-lg h-full"
+            >
+              <div className="relative h-[400px] overflow-hidden">
+                <img
+                  src={featuredArticles[0].image}
+                  alt={featuredArticles[0].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/90 via-[#0A2540]/30 to-transparent"></div>
+                
+                <span className="absolute top-4 left-4 inline-flex items-center px-4 py-2 bg-[#FF6B4A] text-white text-xs font-bold rounded shadow-md">
+                  {featuredArticles[0].category}
+                </span>
+              </div>
+
+              <div className="p-6">
+                <div className="flex items-center gap-4 text-[#2C3338]/70 text-sm mb-3">
+                  <span>Newquay, Cornwall</span>
+                  <div className="flex items-center gap-1">
                     <Clock size={16} />
-                    <span>{article.readTime}</span>
+                    <span>{featuredArticles[0].readTime}</span>
                   </div>
-                  <ArrowRight size={18} className="text-[#2D7A89] group-hover:translate-x-1 transition-transform" />
+                </div>
+
+                <h3 className="text-2xl font-bold text-[#0A2540] mb-3 group-hover:text-[#2D7A89] transition-colors leading-tight uppercase">
+                  {featuredArticles[0].title}
+                </h3>
+
+                <p className="text-[#2C3338]/80 text-sm mb-4 leading-relaxed">
+                  {featuredArticles[0].excerpt}
+                </p>
+
+                <div className="flex items-center gap-2 text-[#FF6B4A] font-semibold text-sm uppercase group-hover:gap-3 transition-all">
+                  <span>Read Full Story</span>
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </a>
+          </div>
+
+          {/* Right Column - 2 Medium Articles Stacked */}
+          <div className="grid gap-6">
+            {featuredArticles.slice(1, 3).map((article, index) => (
+              <a
+                key={article.id}
+                href="#"
+                className="block group rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white shadow-lg animate-fade-in-up"
+                style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/95 via-[#0A2540]/40 to-transparent"></div>
+
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <span className="inline-flex items-center px-3 py-1 bg-[#FF6B4A] text-white text-xs font-bold rounded-full mb-3 shadow-lg">
+                      {article.category}
+                    </span>
+
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#E8DCC4] transition-colors leading-tight">
+                      {article.title}
+                    </h3>
+
+                    <p className="text-[#E8DCC4] text-sm mb-3 leading-relaxed line-clamp-2">
+                      {article.excerpt}
+                    </p>
+
+                    <div className="flex items-center gap-4 text-[#E8DCC4] text-xs">
+                      <div className="flex items-center gap-1">
+                        <Clock size={16} />
+                        <span className="font-medium">{article.readTime}</span>
+                      </div>
+                      <div className="flex items-center gap-1 font-semibold group-hover:gap-2 transition-all">
+                        <span>Read More</span>
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Row - 2 Articles Full Width */}
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
+          {featuredArticles.slice(3).map((article, index) => (
+            <a
+              key={article.id}
+              href="#"
+              className="block group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up hover:-translate-y-1"
+              style={{ animationDelay: `${(index + 3) * 0.1}s` }}
+            >
+              <div className="flex gap-4 p-4">
+                <div className="relative w-36 h-36 flex-shrink-0 rounded-lg overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <span className="absolute top-2 left-2 inline-flex items-center px-3 py-1 bg-[#FF6B4A] text-white text-xs font-bold rounded shadow-md">
+                    {article.category}
+                  </span>
+                </div>
+
+                <div className="flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 text-[#2C3338]/70 text-sm mb-2">
+                      <span>Port Isaac, Cornwall</span>
+                      <div className="flex items-center gap-1">
+                        <Clock size={14} />
+                        <span>{article.readTime}</span>
+                      </div>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-[#0A2540] mb-2 group-hover:text-[#2D7A89] transition-colors leading-tight uppercase line-clamp-2">
+                      {article.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-[#2C3338]/80 text-sm line-clamp-2 leading-relaxed">
+                    {article.excerpt}
+                  </p>
                 </div>
               </div>
             </a>
           ))}
         </div>
-
         {/* View All Button */}
         <div className="mt-16 text-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <a
