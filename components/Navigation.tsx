@@ -5,14 +5,14 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-filter backdrop-blur-md  border-gray-50/ ">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-filter backdrop-blur-md border-gray-50">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-12">
             <a href="/" className="flex items-center gap-3 group">
-        
-              <span className="text-heading text-2xl font-bold hidden text-[#0A2540]">
-               DOWN THE COVE
+              {/* REMOVED 'hidden' CLASS BELOW */}
+              <span className="text-heading text-2xl font-bold text-[#0A2540]">
+                DOWN THE COVE
               </span>
             </a>
 
